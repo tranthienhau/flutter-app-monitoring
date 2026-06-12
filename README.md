@@ -2,6 +2,16 @@
 
 Flutter app ecosystem monitoring POC. Wires up the standard mobile observability stack so prod incidents are detected before users hit them, not after.
 
+## Demo
+
+Real captures from the running app on the iOS Simulator (no mockups). See [FLOW.md](FLOW.md) for how they were generated. The in-app health dashboard shows live uptime probes (note the degraded `payments` endpoint returning 503), frame counters, and the crash-reporting action that fans out to Sentry + Crashlytics.
+
+| Health dashboard | Uptime probes | Crash reporting |
+|---|---|---|
+| ![Health dashboard](screenshots/01-health-dashboard.png) | ![Uptime probes](screenshots/02-uptime-probes.png) | ![Crash reporting](screenshots/03-crash-reporting.png) |
+
+![Demo](screenshots/demo.gif)
+
 ## What it monitors
 
 | Signal | Source | Surfaces in |

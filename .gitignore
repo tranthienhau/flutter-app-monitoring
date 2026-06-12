@@ -6,7 +6,6 @@
 .pub/
 build/
 .idea/
-.vscode/
 *.iml
 ios/
 android/
@@ -14,3 +13,7 @@ macos/
 windows/
 linux/
 web/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
