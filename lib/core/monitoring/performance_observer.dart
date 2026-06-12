@@ -29,11 +29,12 @@ class PerformanceObserver {
       if (totalMs > 32) {
         _slowFrames++;
         _slowFrameController?.add(totalMs);
-        Sentry.metrics().distribution(
-          'frame.total_ms',
-          value: totalMs.toDouble(),
-          unit: const DurationSentryMeasurementUnit(DurationUnit.milliSecond),
-        );
+        Sentry.addBreadcrumb(Breadcrumb(
+          message: 'slow_frame',
+          category: 'app.performance',
+          level: SentryLevel.warning,
+          data: {'frame.total_ms': totalMs},
+        ));
       }
     }
   }
